@@ -1,8 +1,15 @@
+<!-- Extends upon the base html 
+    !!The homepage of the web app!! -->
+
 {% extends 'base.html' %}
 
+<!-- Populating the content block -->
 {% block content %}
    
+<!-- Cloning the header into the page title  -->
     <h1> {% block title %}Welcome to FlaskBlog {% endblock %}</h1>
+
+    <!-- Listing every valid post and the time it was created in the db -->
     {% for post in posts %}
         <a href="{{ url_for('post', post_id=post['id']) }}">
             <h2>{{ post['title'] }}</h2>
