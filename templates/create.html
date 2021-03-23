@@ -1,8 +1,13 @@
+<!-- extends upon the base html -->
+
 {% extends 'base.html' %}
 
+<!-- Populating the content block -->
 {% block content %}
+<!-- Cloning the header into the page title  -->
 <h1>{% block title %} Create a New Post {% endblock %}</h1>
 
+<!-- A simple form to create a new post -->
 <form method="post">
     <div class="form-group">
         <label for="title">Title</label>

@@ -1,9 +1,14 @@
+<!-- extends upon the base html -->
+
 {% extends 'base.html' %}
 
+<!-- Populating the content block -->
 {% block content %}
 
+<!-- Cloning the header into the page title  -->
 <h1>{% block title %}Edit "{{ post['title'] }}" {% endblock %}</h1>
 
+<!-- A simple form to edit an existing post -->
 <form method = "post">
 	<div class="form-group">
 		<label for="title">Title</label>
@@ -27,6 +32,7 @@
 </form>
 <hr>
 
+<!-- An option to delete the post being edited -->
 <form action="{{ url_for('delete', id=post['id']) }}" method="POST">
 	<input type="submit" value="Delete Post"
 		class="btn btn-danger btn-sm"
